@@ -1,35 +1,48 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import {
+  BoxIcon,
+  CategoryIcon,
+  HomeIcon,
+  SellIcon,
+} from "@/components/mios/Icons";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
+        tabBarStyle: { backgroundColor: "#27498c" },
+        tabBarActiveTintColor: "white",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+          title: "Inicio",
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="productos"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+          title: "Productos",
+          tabBarIcon: ({ color }) => <BoxIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="categorias"
+        options={{
+          title: "Categorias",
+          tabBarIcon: ({ color }) => <CategoryIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ventas"
+        options={{
+          title: "Ventas",
+          tabBarIcon: ({ color }) => <SellIcon color={color} />,
         }}
       />
     </Tabs>
