@@ -8,7 +8,9 @@ export default function Layout() {
         screenOptions={{
           headerStyle: { backgroundColor: "#27498c" },
           headerTintColor: "white",
+          headerLeft: () => {},
           headerTitle: "App Carrito de Compras",
+          headerRight: () => {},
         }}
       />
     </View>
