@@ -29,7 +29,7 @@ export const CategoryIcon = (props: any) => (
 );
 
 export const AddIcon = (props: any) => (
-  <Ionicons name="add-circle" size={44} color="black" {...props} />
+  <Ionicons name="add-circle" size={24} color="black" {...props} />
 );
 
 export const EditIcon = (props: any) => (
@@ -38,4 +38,12 @@ export const EditIcon = (props: any) => (
 
 export const DeleteIcon = (props: any) => (
   <MaterialCommunityIcons name="delete" size={30} color="black" {...props} />
+);
+
+export const AddCartIcon = (props: any) => (
+  <FontAwesome name="cart-plus" size={24} color="black" {...props} />
+);
+
+export const SeeCartIcon = (props: any) => (
+  <FontAwesome name="shopping-cart" size={24} color="black" {...props} />
 );

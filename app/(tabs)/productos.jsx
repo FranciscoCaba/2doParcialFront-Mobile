@@ -68,26 +68,64 @@ export default function Producto() {
       </View>
 
       <Link asChild href={"/productos/crear"}>
-        <Pressable style={{ alignSelf: "center" }}>
+        <Pressable style={styles.pressable}>
           <AddIcon color="white" />
+          <Text style={{ color: "white", paddingLeft: 5, fontSize: 20 }}>
+            Crear
+          </Text>
         </Pressable>
       </Link>
 
       <View style={styles.filas}>
         <View style={[styles.celda, { flex: 0.5 }]}>
-          <Text style={[styles.texto]}>{"ID"}</Text>
+          <Text
+            style={[
+              styles.texto,
+              { fontWeight: "bold", fontStyle: "italic", fontSize: 14 },
+            ]}
+          >
+            {"ID"}
+          </Text>
         </View>
         <View style={[styles.celda, { flex: 1 }]}>
-          <Text style={[styles.texto]}>{"Nombre"}</Text>
+          <Text
+            style={[
+              styles.texto,
+              { fontWeight: "bold", fontStyle: "italic", fontSize: 14 },
+            ]}
+          >
+            {"Nombre"}
+          </Text>
         </View>
         <View style={[styles.celda, { flex: 1 }]}>
-          <Text style={[styles.texto]}>{"Categoría"}</Text>
+          <Text
+            style={[
+              styles.texto,
+              { fontWeight: "bold", fontStyle: "italic", fontSize: 14 },
+            ]}
+          >
+            {"Categoría"}
+          </Text>
         </View>
         <View style={[styles.celda, { flex: 1 }]}>
-          <Text style={[styles.texto]}>{"Precio"}</Text>
+          <Text
+            style={[
+              styles.texto,
+              { fontWeight: "bold", fontStyle: "italic", fontSize: 14 },
+            ]}
+          >
+            {"Precio"}
+          </Text>
         </View>
         <View style={[styles.celda, { flex: 2 }]}>
-          <Text style={[styles.texto]}>Acciones</Text>
+          <Text
+            style={[
+              styles.texto,
+              { fontWeight: "bold", fontStyle: "italic", fontSize: 14 },
+            ]}
+          >
+            Acciones
+          </Text>
         </View>
       </View>
       {productos.length === 0 ? (
@@ -107,7 +145,7 @@ export default function Producto() {
             />
           }
           renderItem={({ item }) =>
-            item ? (
+            item.activo ? (
               <View style={styles.filas}>
                 <View style={[styles.celda, { flex: 0.5 }]}>
                   <Text style={[styles.texto]}>{item.id}</Text>
@@ -160,6 +198,17 @@ export default function Producto() {
 }
 
 const styles = StyleSheet.create({
+  pressable: {
+    marginVertical: 10,
+    alignSelf: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 25,
+  },
   texto: {
     color: "black",
     fontSize: 12,
